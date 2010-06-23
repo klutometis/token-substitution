@@ -27,7 +27,12 @@
   (cond ((token? tree)
          (token-mapper tree))
         ((pair? tree)
-         (map (cut map-token-tree token-mapper <>) tree))
+         (cons (map-token-tree token-mapper (car tree))
+               (map-token-tree token-mapper (cdr tree))))
+        ((vector? tree)
+         (vector-map (lambda (i x)
+                       (map-token-tree token-mapper x))
+                     tree))
         (else tree)))
 
 (define substitute-tokens

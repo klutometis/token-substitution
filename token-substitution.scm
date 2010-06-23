@@ -8,6 +8,7 @@
          data-structures)
 
  (use srfi-1
-      vector-lib)
+      vector-lib
+      debug)
 
  (include "substitute-tokens.scm"))

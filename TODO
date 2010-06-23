@@ -1,0 +1,3 @@
+# -*- mode: org; -*-
+* TODO configurable token-delimiter
+  hard-coded to =%data= now à la =sxml-templates=.

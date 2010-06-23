@@ -1,0 +1,11 @@
+((egg "token-substitution.egg")
+ (license "GPL-2")
+ (category parsing)
+ (needs setup-helper srfi-1 vector-lib)
+ (test-depends test)
+ (author "Peter Danenberg")
+ (synopsis "Token substitution")
+ (files "token-substitution.scm"
+        "token-substitution.setup"
+        "substitute-tokens.scm"
+        "tests/run.scm"))

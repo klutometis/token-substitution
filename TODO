@@ -1,4 +1,26 @@
 # -*- mode: org; -*-
+* CANCELED something still seems to be wrong with the algorithm
+  CLOSED: [2010-06-29 Tue 06:58]
+  #+BEGIN_SRC scheme
+    (substitute-tokens '#((grid . #((colModel . (%data column-model)))))
+                       '((column-model #((omg . wirklich) (etc . dahin)))))
+    
+    ;;; => #((grid . #((colModel #((omg . wirklich) (etc . dahin))))))
+  #+END_SRC
+
+  might have expected: =#((grid . #((colModel . #((omg . wirklich)
+  (etc . dahin))))))=
+
+  #+BEGIN_SRC scheme
+    (use token-substitution)
+    
+    (substitute-tokens '(%data b)
+                       '((b . 2)))
+    
+    ;;; => 2
+  #+END_SRC
+
+  nope: works as advertised, dumbass; just use a pair!
 * TODO configurable token-delimiter
   hard-coded to =%data= now à la =sxml-templates=.
 * DONE support vectors

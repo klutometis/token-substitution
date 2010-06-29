@@ -1,7 +1,7 @@
 ((egg "token-substitution.egg")
  (license "GPL-2")
  (category parsing)
- (needs setup-helper srfi-1 vector-lib debug)
+ (needs setup-helper vector-lib debug)
  (test-depends test)
  (author "Peter Danenberg")
  (synopsis "Token substitution")

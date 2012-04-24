@@ -1,4 +1,18 @@
 # -*- mode: org; -*-
+* TODO Ability to delete tokens (with null?)
+  Does that mean we have to splice?
+* TODO configurable token-delimiter
+  hard-coded to =%data= now à la =sxml-templates=.
+* DONE support vectors
+  CLOSED: [2010-06-23 Wed 08:47]
+  - CLOSING NOTE [2010-06-23 Wed 08:48] \\
+    =vector-map= is appropriate here (whereas =map= is inappropriate for
+    lists): there are no defective vectors.
+  mainly for json work
+* DONE support improper lists
+  CLOSED: [2010-06-23 Wed 08:48]
+  - CLOSING NOTE [2010-06-23 Wed 08:48] \\
+    =cons= not =map=
 * CANCELED something still seems to be wrong with the algorithm
   CLOSED: [2010-06-29 Tue 06:58]
   #+BEGIN_SRC scheme
@@ -21,15 +35,3 @@
   #+END_SRC
 
   nope: works as advertised, dumbass; just use a pair!
-* TODO configurable token-delimiter
-  hard-coded to =%data= now à la =sxml-templates=.
-* DONE support vectors
-  CLOSED: [2010-06-23 Wed 08:47]
-  - CLOSING NOTE [2010-06-23 Wed 08:48] \\
-    =vector-map= is appropriate here (whereas =map= is inappropriate for
-    lists): there are no defective vectors.
-  mainly for json work
-* DONE support improper lists
-  CLOSED: [2010-06-23 Wed 08:48]
-  - CLOSING NOTE [2010-06-23 Wed 08:48] \\
-    =cons= not =map=

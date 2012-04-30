@@ -1,19 +1,20 @@
-(load "token-substitution.scm")
-(use token-substitution test debug)
+(use token-substitution test)
 
-(test "list substitution"
+(test "List substitution"
       '(a 2)
       (let ((document '(a (%data b))))
         (substitute-tokens document '((b . 2)))))
 
-(test "vector substitution"
+(test "Vector substitution"
       '#(a 2)
       (let ((document '#(a (%data b))))
         (substitute-tokens document '((b . 2)))))
 
-(trace map)
-
-(test "list and vector substitution"
+(test "List and vector substitution"
       '#((grid . #((colModel #((name . id))))))
       (let ((document '#((grid . #((colModel #((name . (%data name)))))))))
         (substitute-tokens document '((name . id)))))
+
+(test "Substitute #f (should not be mistaken for lack of value)."
+      '(#f)
+      (substitute-tokens '((%data false)) '((data . #f))))

@@ -9,6 +9,10 @@
 (define (make-token value)
   (list token-key value))
 
+(define no-value (cons #f #f))
+
+(define (no-value? value) (eq? value no-value))
+
 (define substitute-token
   (case-lambda
    ((token key-values)
@@ -18,10 +22,10 @@
                         (error 'substitute-token "key not found" key))))
    ((token key-values default)
     (let* ((key (token-value token))
-           (value (alist-ref key key-values eq? #f)))
-      (if value
-          value
-          (default key))))))
+           (value (alist-ref key key-values eq? no-value)))
+      (if (no-value? value)
+          (default key)
+          value)))))
 
 (define (map-token-tree token-mapper tree)
   (cond ((token? tree)

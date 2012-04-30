@@ -17,4 +17,4 @@
 
 (test "Substitute #f (should not be mistaken for lack of value)."
       '(#f)
-      (substitute-tokens '((%data false)) '((data . #f))))
+      (substitute-tokens '((%data false)) '((false . #f))))

@@ -1,5 +1,5 @@
 ((egg "token-substitution.egg")
- (license "GPL-2")
+ (license "BSD")
  (category parsing)
  (needs setup-helper vector-lib debug)
  (test-depends test)

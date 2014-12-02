@@ -1,7 +1,7 @@
 ((egg "token-substitution.egg")
  (license "BSD")
  (category parsing)
- (needs setup-helper vector-lib debug)
+ (needs setup-helper vector-lib)
  (test-depends test)
  (author "Peter Danenberg")
  (synopsis "Token substitution")
